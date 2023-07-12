@@ -1,0 +1,48 @@
+.btn {
+  border-radius: 25px;
+  padding-left: 9px;
+  padding-right: 35px;
+  background-color: #ffffff;
+  border: none;
+  color: black;
+}
+.btn:hover {
+  background-color: #6fb4f5fe;
+}
+
+.mb-2 {
+  padding-right: 60px;
+}
+
+.btn:first-child:active {
+  background-color: #6fb4f5fe;
+}
+
+.btn:last-child:active {
+  background-color: #6fb4f5fe;
+}
+.btn1 {
+  background-color: #6fb4f5fe;
+  color: #ffffff;
+  padding: 5px 13px 5px 11px;
+  margin-left: 13rem;
+}
+.btn2 {
+  background-color: #6fb4f5fe;
+  color: #ffffff;
+  padding: 5px 13px 5px 11px;
+}
+
+.my-drop-zone {
+  border: dotted 3px lightgray;
+  text-align: center;
+  padding: 20%;
+}
+.nv-file-over {
+  border: dotted 3px red;
+} /* Default class applied to drop zones on over */
+
+html,
+body {
+  height: 100%;
+}

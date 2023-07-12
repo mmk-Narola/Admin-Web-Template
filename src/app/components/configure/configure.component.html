@@ -1,0 +1,84 @@
+<c-container>
+    <c-row>
+        <c-col md="2" sm="12">
+            <button cButton class="btn mb-2" (click)="showOption('tab1')"><svg cIcon name="cilSend" size="sm"></svg>
+                Message</button>
+            <button cButton (click)="showOption('tab2')"><svg cIcon name="cilCloudUpload" size="sm"></svg> Data
+                source</button>
+        </c-col>
+        <c-col md="10" sm="12">
+            <c-row *ngIf="messBox === 'tab1'">
+
+                <c-col md="4">
+                    Preferred Question
+                    <c-card>
+                        <c-card-body>
+                            <ng-container *ngFor="let item of preferQue">
+                                <div class="mb-3">
+                                    <label cLabel for="exampleFormControlTextarea1">{{item.ques}}</label>
+                                    <textarea cFormControl id="exampleFormControlTextarea1" class="mb-2 w-100"
+                                        [placeholder]="item.placeholder" rows="2"></textarea>
+                                    <button cButton class="btn1"> <svg cIcon name="cilCursor" size="sm"></svg>
+                                    </button>
+                                </div>
+                            </ng-container>
+                        </c-card-body>
+                    </c-card>
+                </c-col>
+                <c-col md="8">
+                    <c-card class="mt-4">
+                        <c-card-body>
+
+                            <c-row class="justify-content-end">
+                                <c-col>
+                                    <c-input-group class="mb-1">
+                                        <!-- <span cInputGroupText id="basic-addon1"><svg cIcon name="cilSearch" size="lg"></svg></span> -->
+                                        <input aria-describedby="basic-addon1" aria-label="Search Here....."
+                                            cFormControl placeholder="Search here ..." />
+                                    </c-input-group>
+                                </c-col>
+                            </c-row>
+                            <c-row class="justify-content-end">
+                                <span>Just now</span>
+                                <button cButton><svg cIcon name="cilCursor" size="sm"></svg></button>
+                            </c-row>
+
+                        </c-card-body>
+                    </c-card>
+
+                </c-col>
+
+            </c-row>
+            <c-row *ngIf="messBox === 'tab2'">
+                <c-col md="12">
+                    <c-card>
+                        <c-card-body>
+                            <c-row class="justify-content-center">
+                                <c-col md="4">
+                                    <button cButton class="btn2 mb-2"><svg cIcon name="cilFile" size="sm"></svg>
+                                        Upload Document
+                                    </button>
+                                </c-col>
+                                <c-col md="4">
+                                    <button cButton class="btn2 mb-2"><svg cIcon name="cilLink" size="sm"></svg>
+                                        Add Document Link
+                                    </button>
+                                </c-col>
+                            </c-row>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+                                        (fileOver)="fileOverBase($event)" [uploader]="uploader"
+                                        class="well my-drop-zone">
+                                        Upload File here
+                                    </div>
+                                </div>
+                            </div>
+
+                        </c-card-body>
+                    </c-card>
+                </c-col>
+            </c-row>
+        </c-col>
+    </c-row>
+</c-container>
